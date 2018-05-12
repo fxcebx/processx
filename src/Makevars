@@ -6,6 +6,8 @@ OBJECTS = init.o poll.o processx-connection.o            \
 	  unix/named_pipe.o   		 		 \
 	  test-connections.o test-runner.o
 
+PKG_CFLAGS = -D_BSD_SOURCE -D_POSIX_C_SOURCE=200809L
+
 .PHONY: all clean
 
 all: tools/px supervisor/supervisor $(SHLIB)

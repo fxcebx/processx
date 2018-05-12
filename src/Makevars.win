@@ -3,6 +3,8 @@ OBJECTS = test-connections.o init.o poll.o processx-connection.o     \
           win/processx.o win/stdio.o win/named_pipe.o win/cleanup.o  \
 	  win/iocp.o test-runner.o
 
+PKG_CFLAGS = -D_BSD_SOURCE -D_POSIX_C_SOURCE=200809L
+
 .PHONY: all clean
 
 all: tools/px.exe supervisor/supervisor.exe $(SHLIB)
